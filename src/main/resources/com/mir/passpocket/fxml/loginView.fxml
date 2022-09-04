@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="main" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mir.passpocket.Controller.LoginController">
+
+      <ImageView fitHeight="600.0" fitWidth="450.0" layoutX="1.0" pickOnBounds="true">
+            <Image url="@../image/logo.jpg" />
+      </ImageView>
+      <AnchorPane layoutX="450.0" prefHeight="600.0" prefWidth="550.0">
+            <Label id="brand-name" layoutX="95.0" layoutY="28.0" text="PassPocket" />
+            <Label id="login-label" layoutX="214.0" layoutY="128.0" text="Login" />
+            <Button fx:id="loginBtn" layoutX="272.0" layoutY="417.0" mnemonicParsing="false" text="Login" />
+            <Hyperlink layoutX="203.0" layoutY="464.0" text="Forgot Your Password?" />
+            <TextField fx:id="emailInput" layoutX="161.0" layoutY="236.0" prefHeight="37.0" prefWidth="285.0" promptText="Username/Email" />
+            <PasswordField fx:id="passwordInput" layoutX="161.0" layoutY="306.0" prefHeight="36.0" prefWidth="285.0" promptText="Password" styleClass="password-field" />
+            <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="115.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../image/users.png" />
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="115.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../image/lock.png" />
+            </ImageView>
+            <Label layoutX="180.0" layoutY="506.0" text="Don't have an Account?" />
+            <Button fx:id="registerBtn" layoutX="361.0" layoutY="500.0" mnemonicParsing="false" text="Create One" />
+            <Label id="error-label" fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="374.0" prefHeight="16.0" prefWidth="460.0" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+      </AnchorPane>
+   <stylesheets>
+      <URL value="@../css/loginStyle.css" />
+      <URL value="@../css/style.css" />
+   </stylesheets>
+</AnchorPane>

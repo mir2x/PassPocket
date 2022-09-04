@@ -1,0 +1,25 @@
+.text-field, .password-field {
+    -fx-font-size: 15px;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-border-color: #A9A9A9;
+}
+
+.hyperlink{
+    -fx-font-size: 15px;
+}
+
+#brand-name{
+    -fx-background-color: transparent;
+    -fx-text-fill: #24a0ed;
+    -fx-font-size: 60px;
+}
+
+#login-label {
+    -fx-font-size: 40px;
+}
+
+#error-label {
+    -fx-font-size: 15px;
+    -fx-text-fill: red;
+}

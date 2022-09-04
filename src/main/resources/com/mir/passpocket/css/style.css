@@ -1,0 +1,57 @@
+.main{
+    -fx-font-family: "IBM Plex Mono";
+    -fx-background-color:  #3b4252;
+}
+
+.label {
+    -fx-text-fill:  #A9A9A9;
+}
+
+.button{
+    -fx-background-color: #24a0ed;
+    -fx-text-fill: white;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-border-color: #24a0ed;
+}
+
+.combo-box{
+    -fx-background-color: #434c5e;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill:  white;
+}
+
+.check-box {
+    -fx-text-fill:  #A9A9A9;
+}
+
+.text-field {
+    -fx-text-fill: white;
+    -fx-min-width: 300px;
+    -fx-border-color: grey;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+}
+
+
+.menu-button {
+    -fx-background-color: #3b4252;
+}
+
+.list-view{
+    -fx-background-color: #434c5e;
+}
+.list-cell{
+    -fx-background-color: #4c566a;
+    -fx-text-fill: white;
+}
+
+.list-cell:selected {
+    -fx-background-color: grey;
+    -fx-text-fill: #434c5e;
+}
+
+.menu-item{
+    -fx-background-color: #4c566a;
+    -fx-text-fill: white;
+}

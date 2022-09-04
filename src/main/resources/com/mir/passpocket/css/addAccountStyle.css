@@ -1,0 +1,11 @@
+.background-pane{
+    -fx-background-color: #434c5e;
+    -fx-border-radius: 6px;
+}
+
+.text-field {
+    -fx-min-width: 300px;
+    -fx-border-color: grey;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+}

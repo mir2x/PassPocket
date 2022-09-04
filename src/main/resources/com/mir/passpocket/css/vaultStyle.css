@@ -1,0 +1,22 @@
+.label, .check-box {
+    -fx-font-size: 15px;
+}
+
+.item-info {
+    -fx-font-size: 30px;
+}
+
+.background-pane{
+    -fx-background-color: #434c5e;
+    -fx-border-radius: 6px;
+}
+
+
+
+#search-field{
+    -fx-text-fill: white;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1 1 1 1;
+    /*-fx-background-color: transparent;*/
+}
+
