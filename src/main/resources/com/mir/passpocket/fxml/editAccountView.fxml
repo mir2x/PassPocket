@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="main" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mir.passpocket.Controller.EditAccountController">
+    <Label layoutX="517.0" layoutY="173.0" text="Name" />
+    <TextField fx:id="nameInput" layoutX="517.0" layoutY="199.0" />
+    <Label layoutX="517.0" layoutY="251.0" text="Email" />
+    <TextField fx:id="emailInput" layoutX="517.0" layoutY="277.0" />
+    <Label layoutX="520.0" layoutY="332.0" text="Password" />
+    <Label layoutX="521.0" layoutY="411.0" text="URL" />
+    <TextField fx:id="urlInput" layoutX="521.0" layoutY="437.0" />
+    <Button fx:id="updateBtn" layoutX="595.0" layoutY="583.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="151.0" text="Update" />
+    <Button fx:id="cancelBtn" layoutX="637.0" layoutY="644.0" mnemonicParsing="false" text="Cancel" />
+    <ComboBox fx:id="categoryInput" layoutX="513.0" layoutY="507.0" prefHeight="41.0" prefWidth="300.0" promptText="Select Category" />
+    <PasswordField fx:id="passwordInput" layoutX="517.0" layoutY="362.0" />
+    <stylesheets>
+        <URL value="@../css/addAccountStyle.css" />
+        <URL value="@../css/style.css" />
+    </stylesheets>
+</AnchorPane>

@@ -1,13 +1,18 @@
 package com.mir.passpocket;
 
 public class AccountModel {
+    private int id;
     private String name;
+
     private String email;
     private String password;
     private String url;
     private String category;
     private String modified;
 
+    public int getId() {
+        return id;
+    }
     public String getName() {
         return name;
     }
@@ -32,14 +37,12 @@ public class AccountModel {
         return modified;
     }
 
-    public AccountModel(String name, String email) {
+    public AccountModel() {
         super();
-        this.name = name;
-        this.email = email;
     }
 
-    public AccountModel(String name, String email, String password, String url, String category, String modified) {
-        super();
+    public AccountModel(int id, String name, String email, String password, String url, String category, String modified) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;

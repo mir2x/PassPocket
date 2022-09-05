@@ -5,6 +5,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -15,13 +16,16 @@ import java.sql.SQLException;
 public class VaultController {
 
     @FXML
-    private Button addButton, editButton, deleteButton;
+    private AnchorPane detailedInfo;
 
     @FXML
-    private Hyperlink allItems, favorites, trash, accounts, notes, contacts, password_generator;
+    private Button addButton, editButton, deleteButton, favoritesBtn;
 
     @FXML
-    private ListView<AccountModel> allAccount;
+    private Hyperlink allItems, favoriteItems, trash, accounts, notes, contacts, password_generator;
+
+    @FXML
+    private ListView<AccountModel> listAccount;
 
     @FXML
     private TextField unmaskedPasswordField, nameField, emailField, urlField, categoryField, modifiedField;
@@ -37,6 +41,9 @@ public class VaultController {
 
     @FXML
     public void initialize() throws SQLException {
+
+        detailedInfo.setVisible(false);
+
         unmaskedPasswordField.managedProperty().bind(showPassword.selectedProperty());
         unmaskedPasswordField.visibleProperty().bind(showPassword.selectedProperty());
 
@@ -45,19 +52,68 @@ public class VaultController {
 
         unmaskedPasswordField.textProperty().bindBidirectional(passwordField.textProperty());
 
-        allAccount.getItems().addAll(Account.allAccount());
-        allAccount.setCellFactory(listView -> new CustomListCell());
-        allAccount.getSelectionModel().select(0);
-        allAccount.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> setData(newValue));
+        listAccount.getItems().addAll(Account.allAccount());
+        listAccount.setCellFactory(listView -> new CustomListCell());
+        listAccount.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> setData(newValue));
 
         password_generator.setOnAction(e -> toPasswordGenerator());
         accounts.setOnAction(e -> addAccount());
         notes.setOnAction(e -> showNotes());
         addButton.setOnAction(e -> add());
+
+        favoritesBtn.setOnAction(e -> {
+            try {
+                addToFavorites();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        editButton.setOnAction(e -> editAccount());
         userButton.setText(User.getInstance().getUserName());
+
+        allItems.setOnAction(e -> {
+            try {
+                allItems();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        favoriteItems.setOnAction(e -> {
+            try {
+                favoriteItems();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+    }
+
+    private void allItems() throws SQLException {
+        listAccount.getItems().clear();
+        listAccount.getItems().addAll(Account.allAccount());
+    }
+
+    private void favoriteItems() throws SQLException {
+        listAccount.getItems().clear();
+        listAccount.getItems().addAll(Account.favoriteAccount());
+    }
+
+    private void addToFavorites() throws SQLException {
+        Account.addToFavorites(Account.getInstance().getAccount().getId(), User.getInstance().getUserEmail());
+    }
+
+    private void editAccount() {
+        try {
+            Navigator.navigateTo((Stage) addButton.getScene().getWindow(), "editAccountView");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void setData(AccountModel newValue) {
+        detailedInfo.setVisible(true);
+        Account.getInstance().setAccount(newValue);
         nameField.setText(newValue.getName());
         emailField.setText(newValue.getEmail());
         passwordField.setText(newValue.getPassword());

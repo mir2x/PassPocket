@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="main" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mir.passpocket.Controller.AddAccountController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="main" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mir.passpocket.Controller.AddAccountController">
       <Label layoutX="517.0" layoutY="173.0" text="Name" />
       <TextField fx:id="nameInput" layoutX="517.0" layoutY="199.0" />
       <Label layoutX="517.0" layoutY="251.0" text="Email" />
