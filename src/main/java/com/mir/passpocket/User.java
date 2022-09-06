@@ -12,6 +12,7 @@ public class User {
     private int userId = 0;
     private String userName = null;
     private String userEmail = null;
+    private String userPassword = null;
     private boolean isAdmin = false;
     private byte admin = 0;
 
@@ -49,11 +50,11 @@ public class User {
     public String getUserEmail() {
         return userEmail;
     }
+
+    public String getUserPassword() {return userPassword;}
+
     public byte getUserAdmin() {
         return admin;
-    }
-    public boolean getAdminStatus() {
-        return isAdmin;
     }
 
     public void setUser(String s1) throws SQLException {
@@ -67,15 +68,10 @@ public class User {
             userId = rs.getInt(1);
             userName = rs.getString(2);
             userEmail = rs.getString(3);
+            userPassword = rs.getString(4);
             admin = rs.getByte(5);
         }
         isAdmin = admin == 1;
     }
 
-    public void logOut() {
-        userId = 0;
-        userName = null;
-        userEmail = null;
-        isAdmin = false;
-    }
 }

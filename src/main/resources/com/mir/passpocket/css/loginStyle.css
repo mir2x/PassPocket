@@ -1,4 +1,5 @@
 .text-field, .password-field {
+    -fx-text-fill: white;
     -fx-font-size: 15px;
     -fx-border-width: 2;
     -fx-border-radius: 5;

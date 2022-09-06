@@ -1,10 +1,4 @@
-.background-pane{
-    -fx-background-color: #434c5e;
-    -fx-border-radius: 6px;
-}
-
 .text-field, .password-field {
     -fx-text-fill: white;
     -fx-min-width: 300px;
 }
-

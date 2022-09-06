@@ -32,11 +32,6 @@ public class LoginController {
     }
 
     private void onLogin() {
-//        try {
-//            Navigator.navigateTo((Stage) registerBtn.getScene().getWindow(), "vaultView");
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
         errorLabel.setText("");
         String email = emailInput.getText();
         String password = passwordInput.getText();
@@ -57,7 +52,7 @@ public class LoginController {
                         Navigator.navigateTo((Stage) registerBtn.getScene().getWindow(), "vaultView");
                     }
                     else
-                        errorLabel.setText("Wrong password!");
+                        errorLabel.setText("* Passwords do not match!");
                 }
                 else {
                     errorLabel.setText("* No Account found with this email!");

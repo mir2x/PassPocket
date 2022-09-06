@@ -16,25 +16,29 @@
 <?import javafx.scene.layout.Pane?>
 
 <AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="main" stylesheets="@../css/vaultStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mir.passpocket.Controller.VaultController">
-    <ListView fx:id="listAccount" layoutX="283.0" layoutY="145.0" prefHeight="547.0" prefWidth="304.0" />
+    <ListView fx:id="listAccount" layoutX="283.0" layoutY="175.0" prefHeight="517.0" prefWidth="304.0" />
     <AnchorPane layoutX="1.0" prefHeight="109.0" prefWidth="1200.0">
-        <MenuButton fx:id="userButton" layoutX="1064.0" layoutY="19.0">
-            <MenuItem mnemonicParsing="false" text="Profile" />
-            <MenuItem mnemonicParsing="false" text="Logout" />
-        </MenuButton>
-        <TextField id="search-field" alignment="CENTER" layoutX="350.0" layoutY="14.0" prefHeight="42.0" prefWidth="500.0" promptText="Search Vault" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" />
-        <Button layoutX="563.0" layoutY="65.0" mnemonicParsing="false" text="Search" />
+      <MenuButton fx:id="userButton" layoutX="1101.0" layoutY="19.0" mnemonicParsing="false" AnchorPane.rightAnchor="50.0">
+        <items>
+          <MenuItem fx:id="profile" mnemonicParsing="false" text="Profile" />
+          <MenuItem fx:id="logOut" mnemonicParsing="false" text="Logout" />
+        </items>
+      </MenuButton>
+        <TextField id="search-field" fx:id="searchField" alignment="CENTER" layoutX="350.0" layoutY="14.0" prefHeight="42.0" prefWidth="500.0" promptText="Search Vault" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" />
+        <Button fx:id="searchBtn" layoutX="583.0" layoutY="64.0" mnemonicParsing="false" text="Search" />
+      <ImageView fitHeight="31.0" fitWidth="45.0" layoutX="1159.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" styleClass="menu-button">
+         <image>
+            <Image url="@../../../../../../../../../../../../../data/dev/Project/PassPocket/src/main/resources/com/mir/passpocket/icon/user.png" />
+         </image>
+      </ImageView>
     </AnchorPane>
-    <Button fx:id="addButton" layoutX="315.0" layoutY="719.0" prefHeight="50.0" prefWidth="90.0">
+    <Button fx:id="addBtn" layoutX="294.0" layoutY="713.0" prefHeight="25.0" prefWidth="60.0">
       <graphic>
-         <ImageView fitHeight="40.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
-            <image>
+         <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@../icon/add.png" />
-            </image>
          </ImageView>
       </graphic></Button>
-    <AnchorPane fx:id="detailedInfo" layoutX="588.0" layoutY="65.0" prefHeight="642.0" prefWidth="612.0">
-        <Label layoutX="119.0" layoutY="-14.0" prefHeight="66.0" prefWidth="338.0" styleClass="item-info" text="Item Information" />
+    <AnchorPane fx:id="detailedInfo" layoutX="587.0" layoutY="92.0" prefHeight="642.0" prefWidth="612.0">
         <Pane layoutX="119.0" layoutY="81.0" prefHeight="272.0" prefWidth="354.0" styleClass="background-pane">
             <Label layoutX="28.0" layoutY="10.0" text="Name" />
             <TextField fx:id="nameField" editable="false" layoutX="28.0" layoutY="35.0" />
@@ -55,27 +59,37 @@
             <Label layoutX="28.0" layoutY="15.0" text="Modified" />
             <TextField fx:id="modifiedField" editable="false" layoutX="28.0" layoutY="40.0" />
         </Pane>
+      <Label id="title" layoutX="203.0" prefHeight="69.0" prefWidth="211.0" text="Details" />
     </AnchorPane>
-    <Button fx:id="editButton" layoutX="707.0" layoutY="734.0" mnemonicParsing="false" text="Edit" />
-    <Button fx:id="deleteButton" layoutX="800.0" layoutY="734.0" mnemonicParsing="false" text="Delete" />
-    <Hyperlink fx:id="allItems" layoutX="81.0" layoutY="232.0" text="All Items" />
-    <Hyperlink fx:id="favoriteItems" layoutX="81.0" layoutY="261.0" text="Favorites" />
-    <Hyperlink fx:id="trash" layoutX="81.0" layoutY="289.0" text="Trash" />
-    <Label layoutX="84.0" layoutY="349.0" text="Types" />
-    <Hyperlink fx:id="accounts" layoutX="80.0" layoutY="377.0" text="Accounts" />
-    <Hyperlink fx:id="notes" layoutX="81.0" layoutY="407.0" text="Notes" />
-    <Hyperlink fx:id="contacts" layoutX="81.0" layoutY="438.0" text="Contacts" />
-    <Label layoutX="85.0" layoutY="482.0" text="Tools" />
-    <Hyperlink fx:id="password_generator" layoutX="81.0" layoutY="515.0" text="Password Generator" />
-   <Button fx:id="favoritesBtn" layoutX="459.0" layoutY="719.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="90.0">
+    <Hyperlink fx:id="allItems" layoutX="80.0" layoutY="249.0" text="All Items" />
+    <Hyperlink fx:id="favoriteItems" layoutX="80.0" layoutY="279.0" text="Favorites" />
+    <Label layoutX="85.0" layoutY="319.0" text="Types" />
+    <Hyperlink fx:id="accounts" layoutX="80.0" layoutY="349.0" text="Accounts" />
+    <Hyperlink fx:id="notes" layoutX="80.0" layoutY="379.0" text="Notes" />
+    <Label layoutX="85.0" layoutY="419.0" text="Tools" />
+    <Hyperlink fx:id="password_generator" layoutX="80.0" layoutY="439.0" text="Password Generator" />
+   <Button fx:id="favoriteBtn" layoutX="368.0" layoutY="714.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0">
       <graphic>
-         <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../icon/add_favorites.png" />
-            </image>
+         <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../icon/favorites.png" />
          </ImageView>
       </graphic>
    </Button>
+   <Button fx:id="editBtn" layoutX="442.0" layoutY="713.0" prefHeight="25.0" prefWidth="60.0">
+      <graphic>
+         <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../icon/edit.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button fx:id="deleteBtn" layoutX="515.0" layoutY="713.0" prefHeight="25.0" prefWidth="60.0">
+      <graphic>
+         <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../icon/trash.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Label id="title" fx:id="listTitle" layoutX="299.0" layoutY="89.0" prefHeight="69.0" prefWidth="275.0" text="All Items" />
 
     <stylesheets>
 

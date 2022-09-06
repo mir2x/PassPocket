@@ -1,0 +1,6 @@
+.text-area{
+    -fx-max-height: 20;
+}
+#title{
+    -fx-font-size: 40px;
+}

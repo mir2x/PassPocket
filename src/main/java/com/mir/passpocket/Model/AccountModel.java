@@ -1,4 +1,4 @@
-package com.mir.passpocket;
+package com.mir.passpocket.Model;
 
 public class AccountModel {
     private int id;

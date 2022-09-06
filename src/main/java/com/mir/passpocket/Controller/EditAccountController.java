@@ -23,7 +23,6 @@ public class EditAccountController {
     private Button updateBtn, cancelBtn;
     private boolean nameChange, emailChange, urlChange, passwordChange, categoryChange = false;
 
-    private Connection connection;
 
     @FXML
     public void initialize() throws SQLException {
@@ -90,25 +89,30 @@ public class EditAccountController {
 
     private void updateAccount() throws SQLException {
         if(nameChange) {
-            Account.update("Name", nameInput);
+            Account.update("Name", nameInput.getText());
         }
 
         if(emailChange) {
-            Account.update("Email", emailInput);
+            Account.update("Email", emailInput.getText());
         }
 
         if(urlChange) {
-            Account.update("Url", urlInput);
+            Account.update("Url", urlInput.getText());
         }
 
         if(passwordChange) {
-           Account.update("Password", passwordInput);
+           Account.update("Password", passwordInput.getText());
         }
 
         if(categoryChange) {
-            Account.update("Category", categoryInput);
+            Account.update("Category", categoryInput.getValue());
         }
 
+        try {
+            Navigator.navigateTo((Stage) nameInput.getScene().getWindow(), "vaultView");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

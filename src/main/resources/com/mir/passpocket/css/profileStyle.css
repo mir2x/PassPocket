@@ -1,0 +1,14 @@
+.text-field, .password-field {
+    -fx-min-width: 300px;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-border-color: #A9A9A9;
+}
+
+#title{
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+}

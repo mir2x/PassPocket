@@ -1,10 +1,10 @@
 package com.mir.passpocket;
 
+import com.mir.passpocket.Model.AccountModel;
+import com.mir.passpocket.Model.NoteModel;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 public class CustomListCell extends ListCell<AccountModel> {
 
@@ -15,8 +15,11 @@ public class CustomListCell extends ListCell<AccountModel> {
     public CustomListCell() {
         super();
         name = new Label();
+        name.setStyle("-fx-text-fill: #282828");
         email = new Label();
+        email.setStyle("-fx-text-fill: #282828");
         content = new VBox(name, email);
+        content.setStyle("-fx-end-margin: 4px");
         content.setSpacing(10);
     }
 
@@ -31,5 +34,7 @@ public class CustomListCell extends ListCell<AccountModel> {
             setGraphic(null);
         }
     }
+
+
 
 }

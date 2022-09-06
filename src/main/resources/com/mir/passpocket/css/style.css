@@ -25,14 +25,19 @@
     -fx-text-fill:  #A9A9A9;
 }
 
+.text-area {
+    -fx-text-box-border: transparent;
+}
+
+.text-area .content {
+    -fx-background-color: #434c5e;
+}
+
 .text-field {
-    -fx-text-fill: white;
-    -fx-min-width: 300px;
     -fx-border-color: grey;
     -fx-border-width: 0 0 1 0;
     -fx-background-color: transparent;
 }
-
 
 .menu-button {
     -fx-background-color: #3b4252;
@@ -44,11 +49,11 @@
 .list-cell{
     -fx-background-color: #4c566a;
     -fx-text-fill: white;
+    -fx-padding: 5px;
 }
 
 .list-cell:selected {
     -fx-background-color: grey;
-    -fx-text-fill: #434c5e;
 }
 
 .menu-item{

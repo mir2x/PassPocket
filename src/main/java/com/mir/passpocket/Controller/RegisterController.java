@@ -83,7 +83,7 @@ public class RegisterController {
             errorLabel.setText("* You must accept terms and condition!");
         }
         else {
-           User.addUser(name, email, password, 1);
+           User.addUser(name, email, password, 0);
            toLogin();
         }
         
